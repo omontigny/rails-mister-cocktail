@@ -11,7 +11,16 @@
   </head>
 
   <body>
+ <!--    <%= render 'shared/navbar' %> -->
+ <% url = asset_url("cocktailBanner") %>
+ <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= url %>');)">
+   <div class="container p-2">
+     <h1> All Cocktails </h1>
+         <strong>Find any Cocktail you want</strong>  here 💪
+     </div>
+   </div>
     <%= yield %>
+   <!--  <%= render 'shared/footer' %> -->
   </body>
 </html>
 

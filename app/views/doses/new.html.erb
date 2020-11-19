@@ -1,0 +1,20 @@
+<!-- app/views/reviews/new.html.erb -->
+<div class="container">
+      <div class="border col-sm-6 col-md-6 col-lg-6 text-center">
+      <div>
+        <h2>Add a dose to <%= @cocktail.name %> </h2>
+      </div>
+      <div>
+      <%= simple_form_for [ @cocktail, @dose ] do |f| %>
+        <%= f.association :ingredient, input_html: { class: 'select2' }%>
+        <%= f.input :description %>
+        <%= f.submit "Add Ingredient", class: "btn btn-primary" %>
+      <% end %>
+      </div>
+
+      </div>
+      <%= link_to "Back", cocktails_path, {class: "btn btn-primary"} %>
+    </div>
+</div>
+
+

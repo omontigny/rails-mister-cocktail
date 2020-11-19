@@ -7,10 +7,26 @@
 @import "bootstrap/scss/bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+@import 'select2/dist/css/select2';
 
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+@import "cocktails";
+@import "doses";
 
 $gray-light: #DDDDDB;
+$primary-new: #247FC2;
 $spacer: 8px;
+
+body{
+  background-color: #a0bfd6;
+}
+
+.container{
+  //border: 1px solid black;
+  color: white;
+  font-size: 18px;
+  text-align: center;
+  margin-top: 50px;
+}
