@@ -18,47 +18,47 @@ puts "Cocktails cleaned"
 
 # db/seeds.rb
 # Ingredients
-lemon = Ingredient.create!(name: "Citron")
-Ingredient.create!(name: "Glace")
-mint = Ingredient.create!(name: "Feuille de menthe")
-Ingredient.create!(name: "Rhum blanc")
-Ingredient.create!(name: "Eau gazeuse")
-Ingredient.create!(name: "Jus de citron vert")
-Ingredient.create!(name: "Sirop de sucre de canne")
+# lemon = Ingredient.create!(name: "Citron")
+# Ingredient.create!(name: "Glace")
+# mint = Ingredient.create!(name: "Feuille de menthe")
+# Ingredient.create!(name: "Rhum blanc")
+# Ingredient.create!(name: "Eau gazeuse")
+# Ingredient.create!(name: "Jus de citron vert")
+# Ingredient.create!(name: "Sirop de sucre de canne")
 
-Ingredient.create!(name: "cointreau")
-Ingredient.create!(name: "tequila")
+# Ingredient.create!(name: "cointreau")
+# Ingredient.create!(name: "tequila")
 
-Ingredient.create!(name: "Vodka")
-Ingredient.create!(name: "Jus de cranberry")
-Ingredient.create!(name: "Jus d'orange")
-Ingredient.create!(name: "Crème de pêches")
+# Ingredient.create!(name: "Vodka")
+# Ingredient.create!(name: "Jus de cranberry")
+# Ingredient.create!(name: "Jus d'orange")
+# Ingredient.create!(name: "Crème de pêches")
 
-Ingredient.create!(name: "Sel au céleri")
-Ingredient.create!(name: "Poivre")
-Ingredient.create!(name: "Sauce Worcestershire")
-Ingredient.create!(name: "Tabasco")
-Ingredient.create!(name: "Jus de tomate")
+# Ingredient.create!(name: "Sel au céleri")
+# Ingredient.create!(name: "Poivre")
+# Ingredient.create!(name: "Sauce Worcestershire")
+# Ingredient.create!(name: "Tabasco")
+# Ingredient.create!(name: "Jus de tomate")
 
-Ingredient.create!(name: "lait de coco")
-Ingredient.create!(name: "Rhum brun")
-Ingredient.create!(name: "Jus d'ananas")
+# Ingredient.create!(name: "lait de coco")
+# Ingredient.create!(name: "Rhum brun")
+# Ingredient.create!(name: "Jus d'ananas")
 
-# Cocktails
-mojito = Cocktail.create!(name: "Mojito")
-Cocktail.create!(name: "Bloody Mary")
-Cocktail.create!(name: "Sex on the Beach")
-Cocktail.create!(name: "Margarita")
-Cocktail.create!(name: "Pina Colada")
+# # Cocktails
+# mojito = Cocktail.create!(name: "Mojito")
+# Cocktail.create!(name: "Bloody Mary")
+# Cocktail.create!(name: "Sex on the Beach")
+# Cocktail.create!(name: "Margarita")
+# Cocktail.create!(name: "Pina Colada")
 
-# Doses
-first_dose = Dose.new(description: "6 leaves")
-first_dose.cocktail = mojito  # Set foreign key restaurant_id
-first_dose.ingredient = mint
-first_dose.save!
+# # Doses
+# first_dose = Dose.new(description: "6 leaves")
+# first_dose.cocktail = mojito  # Set foreign key restaurant_id
+# first_dose.ingredient = mint
+# first_dose.save!
 
-first_dose.ingredient            # Should contain the ingredient Mint
-first_dose.cocktail            # Should contain the dose cocktail : Mojito
+# first_dose.ingredient            # Should contain the ingredient Mint
+# first_dose.cocktail            # Should contain the dose cocktail : Mojito
 
 # A cocktail has a name (e.g. "Mint Julep", "Whiskey Sour", "Mojito")
 # An ingredient has a name (e.g. "lemon", "ice", "mint leaves")
