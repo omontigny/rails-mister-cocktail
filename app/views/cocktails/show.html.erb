@@ -1,36 +1,30 @@
 <!-- app/views/cocktails/show.html.erb -->
 <div class="container">
-      <h1>My Cocktail <strong><%= @cocktail.name %></strong></h1>
-      <br>
-
-       <div class="card-product">
+  <h1>My Cocktail <strong><%= @cocktail.name %></strong></h1>
+  <br>
+    <div class=content>
+      <div class="card-product">
         <%= image_tag "#{@cocktail.name}", alt: "alttext" %>
-          <div class="card-product-infos">
-              <% @cocktail.doses.each do | dose | %>
-              <p><%= dose.ingredient.name.capitalize %> (<%= dose.description %>)
-                <%= link_to dose_path(dose), method: :delete, class: 'remove-link', data: {confirm: 'Are you sure you want to remove this plant from the garden?'} do %>
-                 <i class="fas fa-trash-alt"></i></p>
-                <% end %>
-              <% end %>
-          </div>
-          </div>
+        <div class="card-product-infos">
+          <% @cocktail.doses.each do | dose | %>
+            <p><%= dose.ingredient.name.capitalize %> (<%= dose.description %>)
+            <%= link_to dose_path(dose), method: :delete, class: 'remove-link', data: {confirm: 'Are you sure you want to remove this plant from the garden?'} do %>
+              <i class="fas fa-trash-alt"></i></p>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
 
-      <div class="bottom">
-      <%= link_to "Add Ingredient", new_cocktail_dose_path(@cocktail), {class: "btn btn-flat"} %>
-      <%= link_to "back", cocktails_path, {class: "btn btn-gradient"} %>
+      <div class="border col-sm-6 col-md-6 col-lg-6 text-center">
+        <h2>Add a dose to <%= @cocktail.name %> </h2>
+        <div>
+          <%= simple_form_for [ @cocktail, @dose ] do |f| %>
+            <%= f.association :ingredient, input_html: { class: 'select2' }%>
+            <%= f.input :description %>
+            <%= f.submit "Add Ingredient", class: "btn btn-primary" %>
+          <% end %>
+        </div>
       </div>
     </div>
-
-
-<!-- # Show all ingredients of this cocktail
-# SELECT description,ingredient.name
-# FROM doses
-# JOIN doses.ingredient_id = ingredient.id
-# WHERE doses.cocktail_id = cocktail.id -->
-
-
-
-
-
-
-
+    <%= link_to "Back", cocktails_path, {class: "btn btn-primary"} %>
+  </div>

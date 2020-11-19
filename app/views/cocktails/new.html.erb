@@ -1,8 +1,10 @@
 <!-- app/views/cocktails/new.html.erb -->
 <div class="container">
-  <div class="row">
+  <div class="border col-sm-6 col-md-6 col-lg-6 text-center">
+    <div>
       <h2>Create a New Cocktail </h2>
-<br>
+    </div>
+    <div>
       <%= simple_form_for [ @cocktail ] do |f| %>
         <%= f.input :name %>
         <%= f.submit "Create cocktail", class: "btn btn-primary" %>
