@@ -13,4 +13,10 @@ Ingredient.create(name: "lemon")
 Ingredient.create(name: "ice")
 Ingredient.create(name: "mint leaves")
 
+Dose.create(name:)
+
+# A cocktail has a name (e.g. "Mint Julep", "Whiskey Sour", "Mojito")
+# An ingredient has a name (e.g. "lemon", "ice", "mint leaves")
+# A dose is the amount needed for each ingredient in a cocktail (e.g. the Mojito cocktail needs 6cl of lemon). So each dose references a cocktail, an ingredient and has a description.
+
 puts "Seeds Done 👍"
