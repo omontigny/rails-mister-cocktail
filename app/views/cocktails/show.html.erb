@@ -4,7 +4,7 @@
   <br>
     <div class=content>
       <div class="card-product">
-        <%= image_tag "#{@cocktail.name}", alt: "alttext" %>
+        <img src="https://img.freepik.com/photos-gratuite/selection-divers-cocktails-table_140725-2909.jpg?size=626&ext=jpg" alt="alttext" >
         <div class="card-product-infos">
           <% @cocktail.doses.each do | dose | %>
             <p><%= dose.ingredient.name.capitalize %> (<%= dose.description %>)
