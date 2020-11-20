@@ -4,8 +4,8 @@
       </div>
       <div class="cards">
         <% @cocktails.each do | cocktail | %>
-         <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://img.freepik.com/photos-gratuite/selection-divers-cocktails-table_140725-2909.jpg?size=626&ext=jpg');">
-              <%= link_to cocktail.name, cocktail_path(cocktail) %>
+         <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),url('<%= cocktail.photo.present? ? cl_image_path(cocktail.photo.key, height: 300, width: 400, crop: :fill) : image_path("missingimage.jpg") %>');">
+            <%= link_to cocktail.name, cocktail_path(cocktail) %>
           </div>
         <% end %>
       </div>

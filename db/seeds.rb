@@ -45,11 +45,13 @@ Ingredient.create!(name: "Rhum brun")
 Ingredient.create!(name: "Jus d'ananas")
 
 # Cocktails
-mojito = Cocktail.create!(name: "Mojito")
-Cocktail.create!(name: "Bloody Mary")
-Cocktail.create!(name: "Sex on the Beach")
-Cocktail.create!(name: "Margarita")
-Cocktail.create!(name: "Pina Colada")
+mojito = Cocktail.New(name: "Mojito")
+mojito.photo = cl_image_path("mv6pllueeeuai5xso3m8hayqbg3v")
+mojito.save!
+# Cocktail.create!(name: "Bloody Mary")
+# Cocktail.create!(name: "Sex on the Beach")
+# Cocktail.create!(name: "Margarita")
+# Cocktail.create!(name: "Pina Colada")
 
 # Doses
 first_dose = Dose.new(description: "6 leaves")

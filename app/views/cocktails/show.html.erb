@@ -4,7 +4,13 @@
   <br>
     <div class=content>
       <div class="card-product">
-        <img src="https://img.freepik.com/photos-gratuite/selection-divers-cocktails-table_140725-2909.jpg?size=626&ext=jpg" alt="alttext" >
+        <% if @cocktail.photo.present?  %>
+          <%= cl_image_tag @cocktail.photo.key, height: 300, width: 400, crop: :fill %>
+        <% else %>
+          <%= cl_image_tag("veuoivesijejlytggukv", width: 400, height: 300, crop: :fill) %>
+        <% end %>
+
+        <!-- <img src="https://img.freepik.com/photos-gratuite/selection-divers-cocktails-table_140725-2909.jpg?size=626&ext=jpg" alt="alttext" > -->
         <div class="card-product-infos">
           <% @cocktail.doses.each do | dose | %>
             <p><%= dose.ingredient.name.capitalize %> (<%= dose.description %>)

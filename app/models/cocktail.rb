@@ -4,6 +4,8 @@ class Cocktail < ApplicationRecord
   # A cocktail has many ingredients through doses
   has_many :ingredients, through: :doses
 
+  # ActiveStorage
+  has_one_attached :photo
   # A cocktail must have a unique name.
   validates :name, presence: true, uniqueness: true
 
