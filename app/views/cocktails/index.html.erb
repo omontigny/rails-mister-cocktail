@@ -4,13 +4,11 @@
       </div>
       <div class="cards">
         <% @cocktails.each do | cocktail | %>
-        <% url = asset_url("missingimage") unless url = image_path(cocktail.name) %>
-          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= url %>');">
+         <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://img.freepik.com/photos-gratuite/selection-divers-cocktails-table_140725-2909.jpg?size=626&ext=jpg');">
               <%= link_to cocktail.name, cocktail_path(cocktail) %>
           </div>
         <% end %>
       </div>
   </div>
-
 
 
