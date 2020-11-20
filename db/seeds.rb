@@ -45,9 +45,9 @@ Ingredient.create!(name: "Rhum brun")
 Ingredient.create!(name: "Jus d'ananas")
 
 # Cocktails
-# mojito = Cocktail.create!(name: "Mojito")
-# mojito.photo = cl_image_path("mv6pllueeeuai5xso3m8hayqbg3v")
-# mojito.save!
+mojito = Cocktail.create!(name: "Mojito")
+mojito.photo = cl_image_path("mv6pllueeeuai5xso3m8hayqbg3v")
+mojito.save!
 # Cocktail.create!(name: "Bloody Mary")
 # Cocktail.create!(name: "Sex on the Beach")
 # Cocktail.create!(name: "Margarita")
@@ -59,8 +59,8 @@ first_dose.cocktail = mojito  # Set foreign key restaurant_id
 first_dose.ingredient = mint
 first_dose.save!
 
-first_dose.ingredient            # Should contain the ingredient Mint
-first_dose.cocktail            # Should contain the dose cocktail : Mojito
+# first_dose.ingredient            # Should contain the ingredient Mint
+# first_dose.cocktail            # Should contain the dose cocktail : Mojito
 
 # A cocktail has a name (e.g. "Mint Julep", "Whiskey Sour", "Mojito")
 # An ingredient has a name (e.g. "lemon", "ice", "mint leaves")
