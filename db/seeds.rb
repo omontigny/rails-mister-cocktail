@@ -45,9 +45,9 @@ Ingredient.create!(name: "Rhum brun")
 Ingredient.create!(name: "Jus d'ananas")
 
 # Cocktails
-mojito = Cocktail.New(name: "Mojito")
-mojito.photo = cl_image_path("mv6pllueeeuai5xso3m8hayqbg3v")
-mojito.save!
+# mojito = Cocktail.create!(name: "Mojito")
+# mojito.photo = cl_image_path("mv6pllueeeuai5xso3m8hayqbg3v")
+# mojito.save!
 # Cocktail.create!(name: "Bloody Mary")
 # Cocktail.create!(name: "Sex on the Beach")
 # Cocktail.create!(name: "Margarita")
