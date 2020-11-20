@@ -45,8 +45,9 @@ Ingredient.create!(name: "Rhum brun")
 Ingredient.create!(name: "Jus d'ananas")
 
 # Cocktails
-mojito = Cocktail.create!(name: "Mojito")
-mojito.photo = cl_image_path("mv6pllueeeuai5xso3m8hayqbg3v")
+mojito = Cocktail.new(name: "Mojito")
+file = File.open(Rails.root.join('db/fixtures/cocktails/Mojito.jpg'))
+mojito.photo.attach(io: file, filename: 'Mojito.jpg', content_type: 'image/jpg')
 mojito.save!
 # Cocktail.create!(name: "Bloody Mary")
 # Cocktail.create!(name: "Sex on the Beach")
