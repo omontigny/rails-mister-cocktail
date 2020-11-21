@@ -1,11 +1,16 @@
 
 <div class="container">
-      <div class="menu"><%= link_to "Add Cocktail", new_cocktail_path, {class: "btn btn-flat"} %>
+      <div class="menu">
+          <%= link_to new_cocktail_path do %>
+        <button class="btn btn-flat" type="button">
+          New<span class="badge"><i class="fas fa-cocktail icon"></i></span>
+        </button>
+        <% end %>
       </div>
       <div class="cards">
         <% @cocktails.each do | cocktail | %>
 
-         <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),url('<%= cocktail.photo.present? ? cl_image_path(cocktail.photo.key, height: 300, width: 400, crop: :fill) : image_path("missingimage.png") %>');">
+         <div class="card-category shadow mb-1" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),url('<%= cocktail.photo.present? ? cl_image_path(cocktail.photo.key, height: 300, width: 400, crop: :fill) : image_path("missingimage.png") %>');">
             <%= link_to cocktail.name, cocktail_path(cocktail) %>
             &nbsp;<%= link_to edit_cocktail_path(cocktail) do %>
             <i id="pen" class="card-category-icon fa fa-pen"></i>
@@ -14,11 +19,9 @@
           <%= link_to cocktail_path(cocktail),
               method: :delete,
               data: { confirm: "Are you sure?" } do %>
-              <i class="card-category-icon fas fa-times-circle"></i>
+              <i class="card-category-icon fas fa-trash-alt"></i>
           <% end %>
           </div>
         <% end %>
 </div>
-
-
 

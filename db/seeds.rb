@@ -58,13 +58,12 @@ mojito.photo.attach(io: file, filename: 'Mojito.jpg', content_type: 'image/jpg')
 mojito.save!
 
 # Mojito
-# 25 feuilles de menth
-# 3 citrons verts
-# 1 l de limonade
-# 75 cl de rhum blanc
-# 20 cl de sucre de canne
-# Jus de citron
-# 2 jus de citron
+# 4 cl de rhum blanc
+# 2 cl de sirop de sucre de canne
+# 6 feuilles de menthe
+# 0,5 citron vert
+# 1 eau gazeuse
+# 10 glaçons
 leaves_dose = Dose.new(description: "6 leaves")
 leaves_dose.cocktail = mojito # Set foreign key restaurant_id
 leaves_dose.ingredient = mint
@@ -119,5 +118,19 @@ soupe = Cocktail.create!(name: "Soupe Angevine")
 # 10cl Curaçao bleu
 # 40cl Cointreau
 # 1,5l Crémant de Loire
+
+# Margarita
+margarita = Cocktail.create!(name: "Margarita")
+# 10 cl de jus de citron vert
+# 10 cl de tequila
+# 10 cl de cointreau
+
+# Gin Fizz
+# 12 cl d'eau gazeuse
+# 2 cl de sirop de sucre de canne
+# 4 cl de jus de citron
+# 6 cl de gin
+
+
 
 puts "Seeds Done 👍"
