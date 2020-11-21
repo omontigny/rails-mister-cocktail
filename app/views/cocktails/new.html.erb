@@ -5,11 +5,7 @@
       <h2>Create a New Cocktail </h2>
     </div>
     <div>
-      <%= simple_form_for [ @cocktail ] do |f| %>
-        <%= f.input :name %>
-        <%= f.input :photo, as: :file %>
-        <%= f.submit "Create cocktail", class: "btn btn-primary" %>
-      <% end %>
+      <%= render "form", cocktail: @cocktail %>
     </div>
   </div>
   <%= link_to "Back", root_path, {class: "btn btn-primary"} %>

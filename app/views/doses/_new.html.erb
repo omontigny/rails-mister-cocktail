@@ -1,0 +1,7 @@
+<!-- app/views/reviews/new.html.erb -->
+<h3>Add a dose to the cocktail</h3>
+  <%= simple_form_for [ cocktail, dose ] do |f| %>
+    <%= f.association :ingredient, input_html: { class: 'select2' }%>
+    <%= f.input :description, :label => "Desc",  input_html: { class: 'required' } %>
+    <%= f.submit "Add Ingredient", class: "btn btn-primary" %>
+  <% end %>

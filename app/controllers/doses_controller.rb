@@ -11,11 +11,10 @@ class DosesController < ApplicationController
     # ingredient = Ingredient.find(doses_params)
     @dose.cocktail = @cocktail # Set foreign key restaurant_id
     # @dose.ingredient = ingredient
-
     if @dose.save
       redirect_to cocktail_path(@cocktail)
     else
-      render :new
+      render "cocktails/show"
     end
   end
 

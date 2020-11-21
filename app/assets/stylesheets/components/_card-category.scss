@@ -18,4 +18,21 @@
     color: white;
   }
 
+  .card-catefory-infos {
+  //padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+}
+
+  .card-category-icon {
+  color: #c42f3b;
+  position: absolute;
+  left: 90px;
+  bottom: 60px;
+  width: 40px;
+}
+
+
 }

@@ -26,8 +26,9 @@ Ingredient.create!(name: "Eau gazeuse")
 Ingredient.create!(name: "Jus de citron vert")
 Ingredient.create!(name: "Sirop de sucre de canne")
 
-Ingredient.create!(name: "cointreau")
-Ingredient.create!(name: "tequila")
+Ingredient.create!(name: "Cointreau")
+Ingredient.create!(name: "Tequila")
+Ingredient.create!(name: "Jus de grenadine")
 
 Ingredient.create!(name: "Vodka")
 Ingredient.create!(name: "Jus de cranberry")
@@ -40,31 +41,68 @@ Ingredient.create!(name: "Sauce Worcestershire")
 Ingredient.create!(name: "Tabasco")
 Ingredient.create!(name: "Jus de tomate")
 
-Ingredient.create!(name: "lait de coco")
+Ingredient.create!(name: "Lait de coco")
 Ingredient.create!(name: "Rhum brun")
 Ingredient.create!(name: "Jus d'ananas")
+
+Ingredient.create!(name: "Crémant de Loire")
+Ingredient.create!(name: "Jus de citron")
+Ingredient.create!(name: "Grand Marnier")
+Ingredient.create!(name: "Curaçao")
 
 # Cocktails
 mojito = Cocktail.new(name: "Mojito")
 file = File.open(Rails.root.join('db/fixtures/cocktails/Mojito.jpg'))
 mojito.photo.attach(io: file, filename: 'Mojito.jpg', content_type: 'image/jpg')
 mojito.save!
-# Cocktail.create!(name: "Bloody Mary")
-# Cocktail.create!(name: "Sex on the Beach")
-# Cocktail.create!(name: "Margarita")
-# Cocktail.create!(name: "Pina Colada")
 
 # Doses
-first_dose = Dose.new(description: "6 leaves")
-first_dose.cocktail = mojito  # Set foreign key restaurant_id
-first_dose.ingredient = mint
-first_dose.save!
+mojito_dose = Dose.new(description: "6 leaves")
+mojito_dose.cocktail = mojito # Set foreign key restaurant_id
+mojito_dose.ingredient = mint
+mojito_dose.save!
 
-# first_dose.ingredient            # Should contain the ingredient Mint
-# first_dose.cocktail            # Should contain the dose cocktail : Mojito
+# first_dose.ingredient   # Should contain the ingredient Mint
+# first_dose.cocktail     # Should contain the dose cocktail : Mojito
 
-# A cocktail has a name (e.g. "Mint Julep", "Whiskey Sour", "Mojito")
-# An ingredient has a name (e.g. "lemon", "ice", "mint leaves")
-# A dose is the amount needed for each ingredient in a cocktail (e.g. the Mojito cocktail needs 6cl of lemon). So each dose references a cocktail, an ingredient and has a description.
+# Pina Colada
+pina_colada = Cocktail.create!(name: "Pina Colada")
+# 4 cl de lait de coco
+# 12 cl de jus d'ananas
+# 2 cl de rhum brun
+# 4 cl de rhum blanc
+
+# Tequila Sunrise
+tequila = Cocktail.create!(name: "Tequila")
+
+# 4 cl de tequila
+# 2 cl de sirop de grenadine
+# 8 cl de jus d'orange Caraïbos
+
+# Blood Mary
+bloody = Cocktail.create!(name: "Bloody Mary")
+# 1 dose Sel au celeri
+# 1 dose Poivre
+# 2 gouttes de tabasco
+# 0,5 cl de sauce Worcestershire
+# 12 cl de jus de tomate
+# 0,5 cl de jus de citron
+# 4 cl de vodka
+
+# Sex on the Beach
+sotb = Cocktail.create!(name: "Sex On the Beach")
+# 4 cl de vodka
+# 4 cl de jus d'orange
+# 4 cl de jus de cranberry
+# 2 cl de creme de pêches
+# Quelques Glacon
+
+# Soupe Angevine
+soupe = Cocktail.create!(name: "Soupe Angevine")
+# 15cl Sirop de sucre de canne
+# 35cl Jus de citron jaune
+# 10cl Curaçao bleu
+# 40cl Cointreau
+# 1,5l Crémant de Loire
 
 puts "Seeds Done 👍"
