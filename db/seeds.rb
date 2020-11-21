@@ -18,37 +18,38 @@ puts "Cocktails cleaned"
 
 # db/seeds.rb
 # Ingredients
-lemon = Ingredient.create!(name: "Citron")
-Ingredient.create!(name: "Glace")
-mint = Ingredient.create!(name: "Feuille de menthe")
-Ingredient.create!(name: "Rhum blanc")
-Ingredient.create!(name: "Eau gazeuse")
-Ingredient.create!(name: "Jus de citron vert")
-Ingredient.create!(name: "Sirop de sucre de canne")
+lemon             = Ingredient.create!(name: "Citron vert")
+limonade          = Ingredient.create!(name: "Limonade")
+ice               = Ingredient.create!(name: "Glace")
+mint              = Ingredient.create!(name: "Feuille de menthe")
+rhum_blanc        = Ingredient.create!(name: "Rhum blanc")
+eau               = Ingredient.create!(name: "Eau gazeuse")
+jus_citron_vert   = Ingredient.create!(name: "Jus de citron vert")
+sirop_sucre_canne = Ingredient.create!(name: "Sirop de sucre de canne")
 
-Ingredient.create!(name: "Cointreau")
-Ingredient.create!(name: "Tequila")
-Ingredient.create!(name: "Jus de grenadine")
+cointreau   = Ingredient.create!(name: "Cointreau")
+tequile     = Ingredient.create!(name: "Tequila")
+grenadine   = Ingredient.create!(name: "Jus de grenadine")
 
-Ingredient.create!(name: "Vodka")
-Ingredient.create!(name: "Jus de cranberry")
-Ingredient.create!(name: "Jus d'orange")
-Ingredient.create!(name: "Crème de pêches")
+vodka     = Ingredient.create!(name: "Vodka")
+cranberry = Ingredient.create!(name: "Jus de cranberry")
+orange    = Ingredient.create!(name: "Jus d'orange")
+peche     = Ingredient.create!(name: "Crème de pêches")
 
-Ingredient.create!(name: "Sel au céleri")
-Ingredient.create!(name: "Poivre")
-Ingredient.create!(name: "Sauce Worcestershire")
-Ingredient.create!(name: "Tabasco")
-Ingredient.create!(name: "Jus de tomate")
+celerei         = Ingredient.create!(name: "Sel au céleri")
+poivre          = Ingredient.create!(name: "Poivre")
+worcestershire  = Ingredient.create!(name: "Sauce Worcestershire")
+tabasco         = Ingredient.create!(name: "Tabasco")
+tomate           = Ingredient.create!(name: "Jus de tomate")
 
-Ingredient.create!(name: "Lait de coco")
-Ingredient.create!(name: "Rhum brun")
-Ingredient.create!(name: "Jus d'ananas")
+coco      = Ingredient.create!(name: "Lait de coco")
+rhum_brun = Ingredient.create!(name: "Rhum brun")
+ananas    = Ingredient.create!(name: "Jus d'ananas")
 
-Ingredient.create!(name: "Crémant de Loire")
-Ingredient.create!(name: "Jus de citron")
-Ingredient.create!(name: "Grand Marnier")
-Ingredient.create!(name: "Curaçao")
+crement     = Ingredient.create!(name: "Crémant de Loire")
+jus_citron  = Ingredient.create!(name: "Jus de citron")
+marnier     = Ingredient.create!(name: "Grand Marnier")
+curacao     = Ingredient.create!(name: "Curaçao")
 
 # Cocktails
 mojito = Cocktail.new(name: "Mojito")
@@ -56,14 +57,28 @@ file = File.open(Rails.root.join('db/fixtures/cocktails/Mojito.jpg'))
 mojito.photo.attach(io: file, filename: 'Mojito.jpg', content_type: 'image/jpg')
 mojito.save!
 
-# Doses
-mojito_dose = Dose.new(description: "6 leaves")
-mojito_dose.cocktail = mojito # Set foreign key restaurant_id
-mojito_dose.ingredient = mint
-mojito_dose.save!
+# Mojito
+# 25 feuilles de menth
+# 3 citrons verts
+# 1 l de limonade
+# 75 cl de rhum blanc
+# 20 cl de sucre de canne
+# Jus de citron
+# 2 jus de citron
+leaves_dose = Dose.new(description: "6 leaves")
+leaves_dose.cocktail = mojito # Set foreign key restaurant_id
+leaves_dose.ingredient = mint
+leaves_dose.save!
 
-# first_dose.ingredient   # Should contain the ingredient Mint
-# first_dose.cocktail     # Should contain the dose cocktail : Mojito
+lemon_dose = Dose.new(description: "3")
+lemon_dose.cocktail = mojito
+lemon_dose.ingredient = lemon
+lemon_dose.save!
+
+limonade_dose = Dose.new(description: "1l")
+limonade_dose.cocktail = mojito
+limonade_dose.ingredient = limonade
+limonade_dose.save!
 
 # Pina Colada
 pina_colada = Cocktail.create!(name: "Pina Colada")
@@ -73,7 +88,7 @@ pina_colada = Cocktail.create!(name: "Pina Colada")
 # 4 cl de rhum blanc
 
 # Tequila Sunrise
-tequila = Cocktail.create!(name: "Tequila")
+tequila = Cocktail.create!(name: "Tequila Sunrise")
 
 # 4 cl de tequila
 # 2 cl de sirop de grenadine
