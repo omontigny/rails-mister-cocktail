@@ -26,6 +26,7 @@ gem 'jbuilder', '~> 2.7'
 # gem 'image_processing', '~> 1.2'
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass', '~> 5.12.0'
+gem 'font-awesome-rails'
 gem 'simple_form'
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'cloudinary', '~> 1.16.0'
