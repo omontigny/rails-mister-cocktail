@@ -20,15 +20,25 @@ $primary-new: #247FC2;
 $spacer: 8px;
 
 body{
-  background-color: #a0bfd6;
+  background-image: linear-gradient(rgba(118, 242, 238, 0.3), rgba(255, 255, 255, 0.9)), url("background_palmtree.jpg");
+  background-size: cover;
+  // background-color: #a0bfd6;
+}
+
+h1{
+  color: $dark-blue;
 }
 
 .container{
   //border: 1px solid black;
   // display: flex;
 
-  color: white;
+  color: $dark-blue;
   font-size: 18px;
   text-align: center;
   margin-top: 50px;
+}
+
+.main-title{
+  color: white;
 }
