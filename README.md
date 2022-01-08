@@ -39,6 +39,7 @@ Here it is the list of Gems used in this project
 * select2
 
 ## Screeshots
+<img width="1397" alt="Capture d’écran 2022-01-08 à 20 30 42" src="https://user-images.githubusercontent.com/17742618/148657270-319db0a8-3867-46ef-b48f-245888257426.png">
 
 
 ## Credits
